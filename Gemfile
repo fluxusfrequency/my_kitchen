@@ -7,11 +7,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
-gem 'rspec-rails'
 gem 'unicorn'
 
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry'
+  gem 'shoulda-matchers'
+  gem 'rspec-rails'
 end
