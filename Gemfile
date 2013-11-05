@@ -10,9 +10,12 @@ gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
 
 group :development, :test do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'pry'
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+  gem 'pry', '>= 0.9.12'
   gem 'shoulda-matchers'
   gem 'rspec-rails'
+  gem 'json_spec'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
 end

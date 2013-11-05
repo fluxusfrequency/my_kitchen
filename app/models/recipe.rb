@@ -6,4 +6,8 @@ class Recipe < ActiveRecord::Base
 
   has_one :recipe_categories
   has_one :category, through: :recipe_categories
+
+  def to_json
+    {:title => title}
+  end
 end
