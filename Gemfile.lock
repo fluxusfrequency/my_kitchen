@@ -38,6 +38,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    database_cleaner (1.2.0)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -73,9 +74,14 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     method_source (0.8.2)
     mime-types (1.25)
     minitest (4.7.5)
+    mocha (0.14.0)
+      metaclass (~> 0.0.1)
+    mocha_rails (0.0.5)
+      rails (>= 3.1.0)
     multi_json (1.8.2)
     pg (0.17.0)
     polyglot (0.3.3)
@@ -158,10 +164,13 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  database_cleaner
   guard-rspec
   jbuilder (~> 1.2)
   jquery-rails
   json_spec
+  mocha
+  mocha_rails
   pg
   pry (>= 0.9.12)
   rails (= 4.0.1)

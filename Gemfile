@@ -18,4 +18,7 @@ group :development, :test do
   gem 'json_spec'
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard-rspec'
+  gem 'database_cleaner'
+  gem 'mocha', require: 'mocha/setup'
+  gem 'mocha_rails'
 end
