@@ -8,17 +8,32 @@
 </head>
 <body>
 
-  <script>
-    // class @MyApp
-    //   @bootsrap: ->
-    //     # kick off
+  <div id="recipes">
+    <form id="addRecipe" action="#">
+      <div>
+        <label for="title">Title: </label>
+        <input id="title" type="text" />
+        <label for="ingredients">Ingredients: </label>
+        <input id="ingredients" type="text" />
+        <label for="description">Description: </label>
+        <input id="description" type="text" />
+        <label for="category">Category: </label>
+        <input id="category" type="text" />
+        <button id="add">Add</button>
+      </div>
+    </form>
+  </div>
 
-    // var MyApp = {
-    //   bootsrap: function() {
-    //     // Kick off the whole thing
-    //   }
-    // }
-    // MyApp.bootsrap();
+  <script id="recipeTemplate" type="text/template">
+    <ul>
+      <li><%= title %></li>
+      <li><% _.each( ingredients, function( keyobj ) {%>
+          <%= keyobj.ingredient %><% } ); %></li>
+      <li><%= description %></li>
+      <li><%= category %></li>
+    </ul>
+
+    <button class="delete">Delete</button>
   </script>
 
 </body>
