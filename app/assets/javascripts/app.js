@@ -1,6 +1,8 @@
-var app = app || {};
+var MyKitchen = MyKitchen || {};
 
 $(function() {
-  new app.AppView();
+  MyKitchen.recipesList = new MyKitchen.RecipeList();
 
+  MyKitchen.router = new MyKitchen.Router();
+  Backbone.history.start({pushState: true});
 });

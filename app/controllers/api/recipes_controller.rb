@@ -1,4 +1,4 @@
-class RecipesController < ApplicationController
+class Api::RecipesController < ApplicationController
   respond_to :json
 
   def index

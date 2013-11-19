@@ -15,4 +15,3 @@
 //= require underscore-min
 //= require backbone-min
 //= require my_kitchen
-//= require_tree .

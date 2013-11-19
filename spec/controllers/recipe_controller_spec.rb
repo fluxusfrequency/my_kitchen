@@ -38,7 +38,7 @@ describe RecipesController do
   describe 'POST /recipes' do
     it 'returns a new recipe' do
       post :create, recipe: {"title" => 'Quesadilla'}, format: :json
-      response.body.should be_json_eql(%|3|).at_path('id')
+      response.body.should have_json_path('id')
       response.body.should be_json_eql(%|"Quesadilla"|).at_path('title')
     end
   end
@@ -56,17 +56,13 @@ describe RecipesController do
       put :update, id: @recipe1.id, recipe: {"title" => 'Salsa Picante'}, format: :json
       @recipe1.reload
       @recipe1.title.should == "Salsa Picante"
-      # response.body.should be_json_eql(%|1|).at_path('id')
-      # response.body.should be_json_eql(%|"Salsa Picante"|).at_path('title')
     end
   end
 
   describe 'DELETE /recipes/:id' do
     it 'deletes a recipe' do
-      count = Recipe.count
       delete :destroy, id: @recipe1.id, format: :json
-      Recipe.count.should == (count - 1)
-      # response.body.should be_json_eql(%|1|).at_path('id')
+      expect { Recipe.find(@recipe1.id) }.to raise_exception(ActiveRecord::RecordNotFound)
     end
   end
 

@@ -26,14 +26,23 @@
 
   <script id="recipeTemplate" type="text/template">
     <ul>
-      <li><%= title %></li>
-      <li><% _.each( ingredients, function( keyobj ) {%>
-          <%= keyobj.ingredient %><% } ); %></li>
-      <li><%= description %></li>
-      <li><%= category %></li>
+      <li><%%= title %></li>
+      <li></li>
+      <li></li>
+      <li></li>
     </ul>
 
     <button class="delete">Delete</button>
+  </script>
+
+  <script id="recipesTemplate" type="text/template">
+    <ul>
+      <%%= _.each( recipes, function( recipe ) {%>
+        <li><%%= recipe.title %></li>
+      <%% /each %>
+    </ul>
+
+    <div id="new-recipe"></div>
   </script>
 
 </body>
