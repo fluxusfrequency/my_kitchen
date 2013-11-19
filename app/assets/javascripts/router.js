@@ -3,8 +3,7 @@ MyKitchen.Router = Backbone.Router.extend({
     'recipes': 'recipes',
     'recipe/:id': 'showRecipe',
     'recipes/new': 'addRecipe',
-    'recipes/edit/:id': 'updateRecipe',
-    'recipes/delete/:id': 'destroyRecipe'
+    'recipes/:id/edit': 'updateRecipe'
   },
 
   recipes: function() {
@@ -22,7 +21,7 @@ MyKitchen.Router = Backbone.Router.extend({
   },
 
   addRecipe: function() {
-    (new MyKitchen.AddRecipeView()).addRecipe();
+    (new MyKitchen.AddRecipeView()).render();
   },
 
   updateRecipe: function() {
@@ -30,11 +29,5 @@ MyKitchen.Router = Backbone.Router.extend({
     recipe.update();
     (new MyKitchen.RecipesView()).render();
   },
-
-  destroyRecipe: function() {
-    var recipe = MyKitchen.recipeList.findWhere({id: id});
-    (new MyKitchen.RecipeView({model: recipe})).deleteRecipe();
-  }
-
 
 });

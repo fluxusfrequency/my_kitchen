@@ -3,10 +3,6 @@ MyKitchen.RecipesView = Backbone.View.extend({
   className: 'recipesContainer',
   template: '#recipesTemplate',
 
-  events: {
-    'click #add': 'addRecipe'
-  },
-
   render: function() {
     templateBody = $(this.template).html();
     compiledTemplate = _.template(templateBody);

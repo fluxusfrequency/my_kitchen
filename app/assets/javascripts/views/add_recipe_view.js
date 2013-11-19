@@ -1,6 +1,12 @@
 MyKitchen.AddRecipeView = Backbone.View.extend({
+  
   el: '#new-recipe',
+
   model: MyKitchen.Recipe,
+
+  events: {
+    'click #add': 'addRecipe'
+  },
 
   addRecipe: function( e ) {
     e.preventDefault();
